@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="description" content="Premium Tech Solutions Architect & Freelance Developer — MVP delivery, full-stack prototyping, business automation.">
+<title>KM Karim • Tech Solutions Architect & Freelance Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cyan:#00F2FE;
+  --gold:#D4AF37;
+  --bg1:#141416;
+  --bg2:#0A0A0B;
+  --card:rgba(255,255,255,0.01);
+  --border:rgba(255,255,255,0.05);
+  --text:#F0F0F2;
+  --muted:rgba(255,255,255,0.5);
+  --radius:24px;
+  --font-en:'Inter','Montserrat',system-ui,sans-serif;
+  --font-ar:'Cairo',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
+body{
+  font-family:var(--font-en);
+  background:radial-gradient(circle at 50% 0%, #1A1A20 0%, var(--bg1) 40%, var(--bg2) 100%);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.bi{font-family:var(--font-en)}
+.bi .ar{font-family:var(--font-ar);direction:rtl;unicode-bidi:embed}
+.bi .en,.bi .ar{display:inline}
+.bi-col{display:flex;flex-direction:column}
+.bi-col .ar{font-family:var(--font-ar);direction:rtl;unicode-bidi:embed;order:-1}
+.glass{
+  background:var(--card);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  transition:box-shadow 0.4s cubic-bezier(0.16,1,0.3,1);
+  will-change:transform,opacity;
+}
+.glass:hover{box-shadow:0 20px 60px rgba(0,242,254,0.08)}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+section{padding:80px 0;position:relative}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:0;overflow:hidden;position:relative}
+.hero-inner{position:relative;z-index:2;width:100%;padding:120px 0 60px}
+.hero-mouse-track{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.hero-mouse-track::before{
+  content:'';position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,242,254,0.08),transparent 70%);
+  transform:translate(-50%,-50%);transition:opacity 0.3s;opacity:0;will-change:transform;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,242,254,0.08);border:1px solid rgba(0,242,254,0.15);
+  border-radius:100px;padding:8px 20px;margin-bottom:32px;
+  font-size:0.8rem;letter-spacing:0.05em;color:var(--cyan);text-transform:uppercase;font-weight:600;
+}
+.hero-badge .ar{font-size:0.75rem;color:var(--gold);margin-right:4px}
+.hero h1{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:800;line-height:1.1;margin-bottom:16px}
+.hero h1 .ar{display:block;font-family:var(--font-ar);font-weight:900;font-size:clamp(1.8rem,5vw,3.5rem);color:var(--gold);margin-bottom:8px}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line-inner{display:block;transform:translateY(100%);opacity:0}
+.hero-sub{font-size:clamp(1rem,2.5vw,1.35rem);color:var(--muted);max-width:680px;margin-bottom:40px}
+.hero-sub .ar{display:block;font-family:var(--font-ar);font-size:clamp(0.9rem,2vw,1.15rem);margin-bottom:6px;color:rgba(255,255,255,0.6)}
+.hero-sub .line{display:block;overflow:hidden}
+.hero-sub .line-inner{display:block;transform:translateY(100%);opacity:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:16px}
+.hero-actions .btn-wrap{overflow:hidden}
+.hero-actions .btn-wrap-inner{display:inline-flex;transform:translateY(100%);opacity:0}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:60px;
+  font-weight:600;font-size:0.95rem;text-decoration:none;cursor:pointer;transition:all 0.3s ease;
+  border:none;position:relative;overflow:hidden;will-change:transform;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--cyan),#0099FF);color:#0A0A0B;
+  box-shadow:0 4px 30px rgba(0,242,254,0.25);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(0,242,254,0.35)}
+.btn-outline{
+  background:transparent;color:var(--gold);border:1px solid rgba(212,175,55,0.4);
+}
+.btn-outline:hover{background:rgba(212,175,55,0.08);border-color:var(--gold)}
+.btn-whatsapp{
+  background:#25D366;color:#fff;box-shadow:0 4px 30px rgba(37,211,102,0.25);position:fixed;
+  bottom:24px;right:24px;padding:16px 24px;border-radius:60px;z-index:999;font-size:0.9rem;
+  animation:pulseWhatsApp 2.5s ease-in-out infinite;
+}
+@keyframes pulseWhatsApp{
+  0%,100%{box-shadow:0 4px 30px rgba(37,211,102,0.25)}
+  50%{box-shadow:0 4px 50px rgba(37,211,102,0.5)}
+}
+.btn-whatsapp:hover{transform:translateY(-2px) scale(1.02)}
+.section-header{text-align:center;margin-bottom:56px}
+.section-header h2{
+  font-size:clamp(1.6rem,4vw,2.8rem);font-weight:800;
+}
+.section-header h2 .ar{display:block;font-family:var(--font-ar);font-weight:900;font-size:clamp(1.3rem,3.5vw,2.2rem);color:var(--gold);margin-bottom:4px}
+.section-header p{color:var(--muted);margin-top:12px;font-size:1rem}
+.section-header p .ar{display:block;font-family:var(--font-ar);font-size:0.9rem;margin-bottom:4px}
+.expertise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.expertise-card{padding:36px 28px;opacity:0;transform:perspective(800px) rotateX(15deg) rotateY(-10deg) scale(0.92);filter:blur(4px);will-change:transform,opacity,filter}
+.expertise-card .icon{width:52px;height:52px;margin-bottom:20px;color:var(--cyan)}
+.expertise-card h3{font-size:1.15rem;font-weight:700;margin-bottom:8px}
+.expertise-card h3 .ar{display:block;font-family:var(--font-ar);font-size:1rem;color:var(--gold);margin-bottom:2px}
+.expertise-card p{font-size:0.9rem;color:var(--muted);line-height:1.7}
+.expertise-card p .ar{display:block;font-family:var(--font-ar);font-size:0.85rem;margin-bottom:4px}
+.projects-pin-section{position:relative;overflow:hidden;padding:0}
+.projects-pin-wrap{position:relative;width:100%}
+.projects-strip{display:flex;flex-wrap:nowrap;will-change:transform}
+.project-card{
+  flex:0 0 100vw;max-width:100vw;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:80px 20px;position:relative;
+}
+.project-card-inner{
+  max-width:960px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+}
+.project-visual{
+  height:380px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(0,242,254,0.04),rgba(212,175,55,0.04));
+  border-radius:var(--radius);border:1px solid var(--border);position:relative;overflow:hidden;
+}
+.project-visual svg{width:140px;height:140px;opacity:0.6}
+.project-meta{position:relative;z-index:2}
+.project-meta .tag{
+  display:inline-block;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.08em;
+  color:var(--cyan);background:rgba(0,242,254,0.06);border:1px solid rgba(0,242,254,0.1);
+  border-radius:100px;padding:4px 14px;margin-bottom:14px;font-weight:600;
+}
+.project-meta h3{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;margin-bottom:6px}
+.project-meta h3 .ar{display:block;font-family:var(--font-ar);font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--gold);margin-bottom:2px}
+.project-meta p{font-size:0.92rem;color:var(--muted);line-height:1.7;margin-bottom:18px}
+.project-meta p .ar{display:block;font-family:var(--font-ar);font-size:0.88rem;margin-bottom:4px}
+.project-links{display:flex;flex-wrap:wrap;gap:10px}
+.project-links .btn{padding:10px 22px;font-size:0.82rem;cursor:pointer}
+.magnetic-btn{transition:transform 0.2s cubic-bezier(0.16,1,0.3,1);will-change:transform}
+.btn-ghost{color:var(--gold);background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15)}
+.btn-ghost:hover{background:rgba(212,175,55,0.12)}
+.footer{border-top:1px solid var(--border);padding:48px 0 120px}
+.footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
+.footer .tagline{color:var(--muted);font-size:0.85rem}
+.footer .tagline .ar{display:block;font-family:var(--font-ar);font-size:0.8rem;margin-bottom:2px}
+.footer .tagline strong{color:var(--text);font-weight:700}
+.social-links{display:flex;gap:16px;align-items:center}
+.social-link{
+  width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--muted);
+  transition:all 0.3s ease;text-decoration:none;
+}
+.social-link:hover{background:rgba(0,242,254,0.06);border-color:rgba(0,242,254,0.2);color:var(--cyan);transform:translateY(-3px)}
+.social-link svg{width:20px;height:20px}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:rgba(0,242,254,0.15);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:rgba(0,242,254,0.3)}
+.pin-spacer{pointer-events:none!important}
+@media(max-width:768px){
+  section{padding:56px 0}
+  .hero-inner{padding:100px 0 40px}
+  .hero h1 .ar{font-size:clamp(1.5rem,7vw,2rem)}
+  .expertise-grid{grid-template-columns:1fr}
+  .btn-whatsapp{bottom:16px;right:16px;padding:12px 20px;font-size:0.82rem}
+  .footer-inner{flex-direction:column;text-align:center}
+  .project-card-inner{grid-template-columns:1fr;gap:24px}
+  .project-visual{height:200px}
+  .project-card{min-height:auto;padding:60px 16px}
+}
+@media(max-width:375px){
+  .container{padding:0 16px}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{justify-content:center}
+  .hero-actions .btn-wrap{width:100%}
+  .hero-actions .btn-wrap .btn{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+  .expertise-card,.project-card,.hero h1 .line-inner,.hero-sub .line-inner,.hero-actions .btn-wrap-inner{opacity:1!important;transform:none!important;filter:none!important}
+}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/971501234567?text=Let%E2%80%99s%20Build%20My%20MVP%20%F0%9F%9A%80" target="_blank" rel="noopener" class="btn btn-whatsapp" aria-label="Chat on WhatsApp">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H6l3-3a8.5 8.5 0 1 1 12-5.5z"/><path d="M9 9h.01M15 9h.01M12 15h.01"/></svg>
+  Let's Build Your MVP &nbsp;|&nbsp; <span style="font-family:var(--font-ar)">لنبني مشروعك</span>
+</a>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-mouse-track" id="mouseTrack"></div>
+  <div class="container hero-inner">
+    <div class="hero-badge">
+      <span class="ar">مهندس حلول تقنية</span>
+      <span>✦ Tech Solutions Architect</span>
+    </div>
+    <h1 class="bi" id="heroTitle">
+      <span class="ar"><span class="line"><span class="line-inner">أُصممُ وأُطلقُ منتجاتك الرقمية</span></span><span class="line"><span class="line-inner">بسرعة البرق</span></span></span>
+      <span class="en"><span class="line"><span class="line-inner">I Design &amp; Ship Hyper-Fast</span></span><span class="line"><span class="line-inner">Digital Products &amp; MVPs</span></span></span>
+    </h1>
+    <p class="hero-sub bi" id="heroSub">
+      <span class="ar"><span class="line"><span class="line-inner">خبرة ٨+ أعوام في بناء الحلول التقنية المتكاملة — من الفكرة إلى الإطلاق في أسابيع</span></span></span>
+      <span class="en"><span class="line"><span class="line-inner">8+ years engineering full-stack solutions — from concept to launch in weeks, not months</span></span></span>
+    </p>
+    <div class="hero-actions" id="heroActions">
+      <div class="btn-wrap"><div class="btn-wrap-inner"><a href="#projects" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        Explore My Work &nbsp;|&nbsp; <span style="font-family:var(--font-ar)">أعمالي</span>
+      </a></div></div>
+      <div class="btn-wrap"><div class="btn-wrap-inner"><a href="https://wa.me/971501234567?text=Let%E2%80%99s%20Build%20My%20MVP%20%F0%9F%9A%80" target="_blank" rel="noopener" class="btn btn-outline">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5H6l3-3a8.5 8.5 0 1 1 12-5.5z"/></svg>
+        Start Your MVP &nbsp;|&nbsp; <span style="font-family:var(--font-ar)">ابدأ مشروعك</span>
+      </a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Expertise -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="bi">
+        <span class="ar">خبراتي الأساسية</span>
+        <span class="en">Core Expertise</span>
+      </h2>
+      <p class="bi">
+        <span class="ar">أُقدّم حلولاً رقمية متكاملة بسرعة واحترافية</span>
+        <span class="en">Delivering end-to-end digital solutions with speed &amp; precision</span>
+      </p>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card glass">
+        <div class="icon">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="bi"><span class="ar">تطوير نماذج أولية سريعة</span><span class="en">⚡ Rapid Full-Stack Prototyping</span></h3>
+        <p class="bi"><span class="ar">من الفكرة إلى الإطلاق في ٢–٤ أسابيع باستخدام أحدث التقنيات</span><span class="en">Idea to live MVP in 2–4 weeks using cutting-edge stacks</span></p>
+      </div>
+      <div class="expertise-card glass">
+        <div class="icon">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+        </div>
+        <h3 class="bi"><span class="ar">أتمتة الأعمال الذكية</span><span class="en">🤖 Business Automation</span></h3>
+        <p class="bi"><span class="ar">أتمتة متكاملة للطلبات، والفواتير، وخدمة العملاء عبر واتساب</span><span class="en">Automated ordering, invoicing &amp; customer service via WhatsApp</span></p>
+      </div>
+      <div class="expertise-card glass">
+        <div class="icon">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <h3 class="bi"><span class="ar">تصميم واجهات فاخرة</span><span class="en">🎨 Premium UI/UX Design</span></h3>
+        <p class="bi"><span class="ar">تجارب مستخدم سلسة بتصاميم عصرية وجذابة</span><span class="en">Smooth, modern, high-conversion user experiences</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects - Pin Scroll -->
+<section class="projects-pin-section" id="projects">
+  <div class="projects-pin-wrap" id="pinWrap">
+    <div class="projects-strip" id="projectsStrip">
+      <!-- Project 1 -->
+      <div class="project-card" data-index="0">
+        <div class="project-card-inner">
+          <div class="project-visual">
+            <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="0.8" stroke-linecap="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4" stroke="#00F2FE"/>
+              <circle cx="12" cy="10" r="2" stroke="#D4AF37"/>
+              <path d="M16 10h2M6 10h2" stroke="#00F2FE" stroke-width="0.6"/>
+              <path d="M12 6V4M12 16v2" stroke="#D4AF37" stroke-width="0.6"/>
+            </svg>
+          </div>
+          <div class="project-meta">
+            <span class="tag">✦ Landing Page</span>
+            <h3 class="bi">
+              <span class="ar">حلاقة دوبل إكس — موقع فاخر</span>
+              <span class="en">Double X Men's Salon</span>
+            </h3>
+            <p class="bi">
+              <span class="ar">واجهة فاخرة ثنائية اللغة مع حجز مواعيد عبر واتساب، وتكامل خرائط جوجل، وتصميم متجاوب كامل</span>
+              <span class="en">Premium bilingual luxury interface with WhatsApp scheduling, Google Maps sync &amp; 24/7 mobile-first design</span>
+            </p>
+            <div class="project-links">
+              <a href="#" class="btn btn-primary magnetic-btn" style="padding:10px 24px;font-size:0.82rem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="#" class="btn btn-ghost magnetic-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Case Study
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="project-card" data-index="1">
+        <div class="project-card-inner">
+          <div class="project-visual">
+            <svg width="140" height="140" viewBox="0 0 24 24" fill="none" stroke="#00F2FE" stroke-width="0.8" stroke-linecap="round">
+              <rect x="2" y="2" width="20" height="20" rx="3"/>
+              <path d="M6 6h4v4H6zM14 6h4v4h-4zM6 14h4v4H6zM14 14h4v4h-4z" stroke="#D4AF37" stroke-width="0.6"/>
+              <path d="M3 10h18M3 18h18" stroke="currentColor" stroke-width="0.4"/>
+            </svg>
+          </div>
+          <div class="project-meta">
+            <span class="tag">✦ Retail MVP</span>
+            <h3 class="bi">
+              <span class="ar">منصة إدارة المتجر والطلب عبر السيارة</span>
+              <span class="en">Drive-Thru &amp; Shop Management MVP</span>
+            </h3>
+            <p class="bi">
+              <span class="ar">منصة أتمتة متكاملة — تتبع المخزون، تحليلات أرباح فورية، ومحرك طلب آلي عبر واتساب</span>
+              <span class="en">Robust retail automation — smart inventory tracking, instant profit analytics &amp; automated WhatsApp ordering engine</span>
+            </p>
+            <div class="project-links">
+              <a href="#" class="btn btn-primary magnetic-btn" style="padding:10px 24px;font-size:0.82rem">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                Live Demo
+              </a>
+              <a href="#" class="btn btn-ghost magnetic-btn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Full Case Study
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="tagline bi">
+        <span class="ar">مُصمَّم و مُطوَّر بـ ❤️ بواسطة</span>
+        <span class="en">Crafted &amp; Engineered with ❤️ by</span>
+        <strong> KM Karim</strong>
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/kmkarimx" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/kmkarimx" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://wa.me/971501234567?text=Let%E2%80%99s%20Build%20My%20MVP%20%F0%9F%9A%80" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp" style="color:#25D366;border-color:rgba(37,211,102,0.2)">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+// --- Mouse tracking gradient ---
+(function(){
+  var hero=document.querySelector('.hero');
+  var tracker=document.getElementById('mouseTrack');
+  if(!hero||!tracker)return;
+  hero.addEventListener('mousemove',function(e){
+    var rect=hero.getBoundingClientRect();
+    var x=e.clientX-rect.left;
+    var y=e.clientY-rect.top;
+    tracker.style.opacity='1';
+    tracker.style.setProperty('--mx',x+'px');
+    tracker.style.setProperty('--my',y+'px');
+    tracker.querySelector('::before');
+    tracker.style.setProperty('background','radial-gradient(600px at '+x+'px '+y+'px, rgba(0,242,254,0.08), transparent 70%)');
+  });
+  hero.addEventListener('mouseleave',function(){
+    tracker.style.opacity='0';
+  });
+})();
+
+// --- Magnetic buttons ---
+(function(){
+  var btns=document.querySelectorAll('.magnetic-btn');
+  btns.forEach(function(btn){
+    btn.addEventListener('mousemove',function(e){
+      var rect=btn.getBoundingClientRect();
+      var x=e.clientX-rect.left-rect.width/2;
+      var y=e.clientY-rect.top-rect.height/2;
+      gsap.to(btn,{x:x*0.3,y:y*0.3,scale:1.04,duration:0.4,ease:'power2.out',overwrite:'auto'});
+    });
+    btn.addEventListener('mouseleave',function(){
+      gsap.to(btn,{x:0,y:0,scale:1,duration:0.6,ease:'elastic.out(1,0.4)',overwrite:'auto'});
+    });
+  });
+})();
+
+// --- Main GSAP timeline ---
+document.addEventListener('DOMContentLoaded',function(){
+
+  // Hero split-text slide-up + glow
+  var heroLines=document.querySelectorAll('#heroTitle .line-inner, #heroSub .line-inner');
+  var heroBtnWraps=document.querySelectorAll('#heroActions .btn-wrap-inner');
+  var heroBadge=document.querySelector('.hero-badge');
+
+  var heroTL=gsap.timeline({delay:0.3});
+  heroTL
+    .fromTo(heroBadge,{opacity:0,y:20},{opacity:1,y:0,duration:0.6,ease:'power2.out'})
+    .to(heroLines,{y:0,opacity:1,duration:0.9,stagger:0.12,ease:'power3.out'},'-=0.2')
+    .to(heroBtnWraps,{y:0,opacity:1,duration:0.7,stagger:0.15,ease:'power3.out'},'-=0.3');
+
+  // Expertise cards - 3D scroll reveal
+  var expertiseCards=document.querySelectorAll('.expertise-card');
+  expertiseCards.forEach(function(card,i){
+    gsap.to(card,{
+      scrollTrigger:{
+        trigger:card,
+        start:'top 88%',
+        toggleActions:'play none none reverse'
+      },
+      opacity:1,
+      rotationX:0,
+      rotationY:0,
+      scale:1,
+      filter:'blur(0px)',
+      duration:1.0,
+      delay:i*0.15,
+      ease:'power3.out'
+    });
+  });
+
+  // Projects pin + horizontal scroll
+  var pinWrap=document.getElementById('pinWrap');
+  var strip=document.getElementById('projectsStrip');
+  var cards=strip.querySelectorAll('.project-card');
+  if(!pinWrap||!strip||cards.length<1)return;
+
+  // Set strip width
+  function refreshLayout(){
+    var totalW=0;
+    cards.forEach(function(c){totalW+=c.offsetWidth});
+    strip.style.width=totalW+'px';
+    ScrollTrigger.refresh();
+  }
+  refreshLayout();
+  window.addEventListener('resize',refreshLayout);
+
+  var gap=0;
+  ScrollTrigger.create({
+    trigger:pinWrap,
+    pin:true,
+    start:'top 0px',
+    end:function(){return '+='+(strip.offsetWidth-window.innerWidth+200)},
+    invalidateOnRefresh:true,
+    anticipatePin:1,
+    onRefresh:function(){refreshLayout()}
+  });
+
+  ScrollTrigger.create({
+    trigger:pinWrap,
+    start:'top 0px',
+    end:function(){return '+='+(strip.offsetWidth-window.innerWidth+200)},
+    onUpdate:function(self){
+      var max=strip.offsetWidth-window.innerWidth;
+      if(max<0)return;
+      var x=-self.progress*max;
+      gsap.set(strip,{x:x});
+    }
+  });
+
+  // Fade in project meta on scroll
+  cards.forEach(function(card,i){
+    var meta=card.querySelector('.project-meta');
+    var visual=card.querySelector('.project-visual');
+    if(meta){
+      gsap.fromTo(meta,{opacity:0,y:40},{scrollTrigger:{
+        trigger:card,
+        start:'left 70%',
+        end:'left 30%',
+        scrub:1.2,
+        toggleActions:'play none none reverse',
+        horizontal:true
+      },opacity:1,y:0,ease:'power2.out'});
+    }
+    if(visual){
+      gsap.fromTo(visual,{opacity:0,scale:0.9},{scrollTrigger:{
+        trigger:card,
+        start:'left 75%',
+        end:'left 35%',
+        scrub:1.2,
+        toggleActions:'play none none reverse',
+        horizontal:true
+      },opacity:1,scale:1,ease:'power2.out'});
+    }
+  });
+
+  ScrollTrigger.refresh();
+});
+</script>
+</body>
+</html>
