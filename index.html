@@ -1,33 +1,182 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Landing pages, AI chatbots, internal tools, and MVPs built fast for modern businesses.">
-<title>MVP ARCHITECT • AI-Built Web Solutions</title>
+<title>MVP ARCHITECT — Premium Websites for Local Businesses</title>
+<meta name="description" content="Fast, modern websites built for local businesses in 3–5 days. Convert visitors into customers.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/main.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cyan:#00F2FE;
+  --gold:#D4AF37;
+  --bg1:#121214;
+  --bg2:#09090A;
+  --card:rgba(255,255,255,0.012);
+  --border:rgba(255,255,255,0.05);
+  --text:#F0F0F2;
+  --muted:rgba(255,255,255,0.4);
+  --radius:16px;
+  --font:'Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
+body{
+  font-family:var(--font);
+  background:radial-gradient(circle at 50% 0%, #1A1A20 0%, var(--bg1) 40%, var(--bg2) 100%);
+  color:var(--text);min-height:100vh;overflow-x:hidden;line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.container{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+section{padding:80px 0;position:relative}
+.glass{
+  background:var(--card);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--border);border-radius:var(--radius);
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:60px;
+  font-weight:600;font-size:0.88rem;text-decoration:none;cursor:pointer;transition:all 0.25s ease;
+  border:none;will-change:transform;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--cyan),#0099FF);color:#0A0A0B;
+  box-shadow:0 4px 20px rgba(0,242,254,0.15);
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,242,254,0.25)}
+.btn-outline{
+  background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.1);
+}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+.accent{color:var(--cyan)}
+.gold{color:var(--gold)}
+.section-label{
+  display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:600;letter-spacing:0.06em;
+  text-transform:uppercase;color:var(--cyan);margin-bottom:12px;
+}
+.section-label::before{content:'';width:24px;height:1.5px;background:var(--cyan)}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:800;line-height:1.15;margin-bottom:12px}
+.section-desc{color:var(--muted);font-size:0.95rem;max-width:560px}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;background:rgba(9,9,10,0.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;font-size:1.05rem;letter-spacing:-0.02em;color:var(--text);text-decoration:none}
+.logo span{color:var(--cyan)}
+.header-nav{display:flex;gap:20px;align-items:center}
+.header-nav a{color:var(--muted);text-decoration:none;font-size:0.82rem;font-weight:500;transition:color 0.3s}
+.header-nav a:hover{color:var(--cyan)}
+.header-nav .btn{padding:7px 18px;font-size:0.78rem;font-weight:600}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:80px}
+.hero-content{max-width:780px}
+.hero h1{font-size:clamp(1.8rem,4.5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:16px}
+.hero p{font-size:clamp(0.95rem,1.8vw,1.15rem);color:var(--muted);max-width:560px;margin-bottom:32px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.service-card{padding:28px 24px;transition:transform 0.3s ease,border-color 0.3s}
+.service-card:hover{transform:translateY(-4px);border-color:rgba(0,242,254,0.08)}
+.service-card .icon{width:38px;height:38px;margin-bottom:14px;color:var(--cyan)}
+.service-card h3{font-size:1rem;font-weight:700;margin-bottom:6px}
+.service-card p{font-size:0.85rem;color:var(--muted);line-height:1.6}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.benefit-card{text-align:center;padding:28px 20px;transition:transform 0.3s ease}
+.benefit-card:hover{transform:translateY(-3px)}
+.benefit-card .icon{width:36px;height:36px;margin:0 auto 12px;color:var(--gold)}
+.benefit-card h4{font-size:0.95rem;font-weight:700;margin-bottom:4px}
+.benefit-card p{font-size:0.82rem;color:var(--muted)}
+.demo-section{background:linear-gradient(180deg,rgba(0,242,254,0.02),transparent)}
+.demo-showcase{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:40px}
+.demo-mockup{
+  background:linear-gradient(135deg,rgba(0,242,254,0.04),rgba(212,175,55,0.04));
+  border-radius:var(--radius);border:1px solid var(--border);padding:32px;position:relative;overflow:hidden;
+}
+.demo-mockup .bar{height:10px;display:flex;gap:6px;margin-bottom:20px}
+.demo-mockup .bar span{width:8px;height:8px;border-radius:50%;display:block}
+.demo-mockup .bar span:nth-child(1){background:#ff5f57}
+.demo-mockup .bar span:nth-child(2){background:#ffbd2e}
+.demo-mockup .bar span:nth-child(3){background:#28c840}
+.demo-mockup h3{font-size:1.2rem;font-weight:700;margin-bottom:4px}
+.demo-mockup .tagline{font-size:0.8rem;color:var(--gold);margin-bottom:16px}
+.demo-mockup .row{display:flex;gap:12px;margin-bottom:14px}
+.demo-mockup .row .box{flex:1;height:36px;border-radius:8px;background:rgba(255,255,255,0.03);border:1px solid var(--border)}
+.demo-mockup .row .box.tall{height:60px}
+.demo-mockup .row .box.cyan{background:rgba(0,242,254,0.04);border-color:rgba(0,242,254,0.08)}
+.demo-mockup .row .box.gold{background:rgba(212,175,55,0.04);border-color:rgba(212,175,55,0.08)}
+.demo-features{display:flex;flex-direction:column;gap:14px}
+.demo-feature{display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(255,255,255,0.01);border-radius:12px;border:1px solid var(--border)}
+.demo-feature svg{width:20px;height:20px;color:var(--cyan);flex-shrink:0}
+.demo-feature h4{font-size:0.88rem;font-weight:600;margin-bottom:1px}
+.demo-feature p{font-size:0.78rem;color:var(--muted)}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:40px}
+.pricing-card{padding:36px 28px;text-align:center;transition:transform 0.3s ease,border-color 0.3s;position:relative}
+.pricing-card.featured{border-color:rgba(0,242,254,0.15);background:rgba(0,242,254,0.01)}
+.pricing-card.featured .badge{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--cyan),#0099FF);color:#0A0A0B;
+  font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;
+  padding:4px 16px;border-radius:60px;
+}
+.pricing-card:hover{transform:translateY(-4px);border-color:rgba(0,242,254,0.08)}
+.pricing-card .price{font-size:2.4rem;font-weight:900;color:var(--cyan);line-height:1;margin-bottom:4px}
+.pricing-card .price .curr{font-size:1.2rem;font-weight:600}
+.pricing-card .price-label{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:16px}
+.pricing-card h3{font-size:1rem;font-weight:700;margin-bottom:4px}
+.pricing-card p{font-size:0.82rem;color:var(--muted);margin-bottom:18px;line-height:1.5}
+.pricing-card ul{list-style:none;margin-bottom:20px;text-align:left}
+.pricing-card ul li{font-size:0.82rem;padding:6px 0;color:var(--muted);display:flex;align-items:center;gap:8px}
+.pricing-card ul li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--cyan);flex-shrink:0}
+.contact-section{position:relative}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:40px}
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.contact-form input,.contact-form select,.contact-form textarea{
+  width:100%;padding:14px 16px;border-radius:12px;border:1px solid var(--border);
+  background:rgba(255,255,255,0.02);color:var(--text);font-size:0.88rem;font-family:var(--font);
+  outline:none;transition:border-color 0.3s;
+}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:var(--cyan)}
+.contact-form select option{background:var(--bg1);color:var(--text)}
+.contact-form textarea{min-height:100px;resize:vertical}
+.contact-form .btn{justify-content:center}
+.contact-info h3{font-size:1.1rem;font-weight:700;margin-bottom:8px}
+.contact-info p{color:var(--muted);font-size:0.88rem;margin-bottom:20px;line-height:1.6}
+.contact-social{display:flex;gap:12px}
+.contact-social a{
+  width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.02);border:1px solid var(--border);color:var(--muted);
+  transition:all 0.3s ease;text-decoration:none;
+}
+.contact-social a:hover{background:rgba(0,242,254,0.06);border-color:rgba(0,242,254,0.2);color:var(--cyan);transform:translateY(-3px)}
+.contact-social a svg{width:20px;height:20px}
+.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:var(--muted);font-size:0.78rem}
+.footer strong{color:var(--text);font-weight:700}
+::-webkit-scrollbar{width:4px;background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:rgba(0,242,254,0.08);border-radius:2px}
+@media(max-width:768px){
+  section{padding:60px 0}
+  .header-nav a.nav-hide{display:none}
+  .demo-showcase{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .pricing-card{padding:28px 20px}
+}
+@media(max-width:375px){
+  .container{padding:0 18px}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{justify-content:center}
+  .pricing-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:0.01ms!important}
+}
+</style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
   <div class="container">
-    <a href="#" class="logo-wrap">
-      <svg class="logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="1" y="1" width="30" height="30" rx="6" stroke="#00F2FE" stroke-width="1.2" fill="none"/>
-        <path d="M8 22 L12 10 L16 17 L20 10 L24 22" stroke="#00F2FE" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="22" cy="9" r="1.5" fill="#00F2FE" opacity="0.8"/>
-        <path d="M2 16h2M28 16h2M16 2v2M16 28v2" stroke="#00F2FE" stroke-width="0.6" opacity="0.4"/>
-      </svg>
-      <span class="logo-text">MVP ARCHITECT<span class="sub">AI-BUILT WEB SOLUTIONS</span></span>
-    </a>
+    <a href="#" class="logo">MVP<span>.</span>ARCHITECT</a>
     <nav class="header-nav">
-      <a href="#services" class="nav-link">Services</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#contact" class="btn">Let's Talk</a>
+      <a href="#services" class="nav-hide">Services</a>
+      <a href="#demo" class="nav-hide">Demo</a>
+      <a href="#pricing" class="nav-hide">Pricing</a>
+      <a href="#contact" class="btn btn-primary">Get Yours</a>
     </nav>
   </div>
 </header>
@@ -36,32 +185,15 @@
 <section class="hero" id="home">
   <div class="container">
     <div class="hero-content">
-      <span class="hero-badge ar">مهندس حلول تقنية</span>
-      <h1>I Build AI-Powered Websites &amp; Automation Systems That Grow Businesses</h1>
-      <p>Landing pages, AI chatbots, internal tools, and MVPs built fast for modern businesses.</p>
+      <div class="section-label">Premium Local Business Websites</div>
+      <h1>Grow Your Business With a Premium Website That Converts Visitors Into Customers</h1>
+      <p>Fast, modern websites built for local businesses in 3–5 days. No fluff. Just results.</p>
       <div class="hero-actions">
-        <a href="#projects" class="btn btn-primary">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          View Projects
+        <a href="#contact" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><polyline points="5 12 19 12"/><polyline points="12 5 19 12 12 19"/></svg>
+          Get Your Website
         </a>
-        <a href="https://www.linkedin.com/in/karim-saleh-b078a0391/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          Connect on LinkedIn
-        </a>
-      </div>
-      <div class="trust-badges">
-        <span class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Fast Delivery
-        </span>
-        <span class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
-          Mobile Optimized
-        </span>
-        <span class="trust-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06"/></svg>
-          AI Automation Ready
-        </span>
+        <a href="#demo" class="btn btn-outline">View Demo</a>
       </div>
     </div>
   </div>
@@ -71,101 +203,230 @@
 <section id="services">
   <div class="container">
     <div class="section-label">What I Build</div>
-    <h2 class="section-title">Services &amp; Solutions</h2>
-    <p class="section-desc" style="margin-bottom:40px">Tailored digital solutions to grow your business — from concept to launch.</p>
+    <h2 class="section-title">Websites That Work for Your Business</h2>
+    <p class="section-desc" style="margin-bottom:36px">Every site is mobile-first, lightning-fast, and designed to turn visitors into paying customers.</p>
     <div class="services-grid">
       <div class="service-card glass">
         <div class="icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
         </div>
         <h3>Landing Pages</h3>
-        <p>High-converting, lightning-fast interfaces designed to turn visitors into customers.</p>
+        <p>High-converting, premium designed pages that showcase your business at its best.</p>
       </div>
       <div class="service-card glass">
         <div class="icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06"/></svg>
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M6 6h4v4H6zM14 6h4v4h-4zM6 14h4v4H6zM14 14h4v4h-4z"/></svg>
         </div>
-        <h3>AI Chatbots</h3>
-        <p>Automated smart customer service and intake agents that work 24/7 without pause.</p>
+        <h3>Booking Systems</h3>
+        <p>Let customers book appointments directly from your site — automatically and 24/7.</p>
       </div>
       <div class="service-card glass">
         <div class="icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M6 6h4v4H6zM14 6h4v4h-4zM6 14h4v4H6zM14 14h4v4h-4z"/></svg>
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M6 6h4v4H6zM14 6h4v4h-4zM6 14h4v4H6zM14 14h4v4h-4z"/></svg>
         </div>
         <h3>Business Automation</h3>
-        <p>Integrated backend workflows that eliminate manual operations and streamline your business.</p>
-      </div>
-      <div class="service-card glass">
-        <div class="icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>MVP Development</h3>
-        <p>Rapid software prototyping to launch your ideas in weeks, not months.</p>
-      </div>
-    </div>
-    <div class="stats-row">
-      <div class="stat-card glass">
-        <div class="num">2+</div>
-        <div class="label">MVPs Built</div>
-      </div>
-      <div class="stat-card glass">
-        <div class="num">Fast</div>
-        <div class="label">Turnaround</div>
-      </div>
-      <div class="stat-card glass">
-        <div class="num">AI</div>
-        <div class="label">AI-First Dev</div>
+        <p>Automate booking confirmations, reminders, and follow-ups to save time and increase revenue.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS PIN (cards rendered by JS) -->
-<section class="pin-section" id="projects">
-  <div class="pin-wrap" id="pinWrap">
-    <div class="pin-strip" id="pinStrip"></div>
+<!-- BENEFITS -->
+<section id="benefits">
+  <div class="container">
+    <div class="section-label">Why a Website</div>
+    <h2 class="section-title">Stop Losing Customers to Competitors Online</h2>
+    <p class="section-desc" style="margin-bottom:36px">A premium website is the difference between a prospect choosing you or scrolling past.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card glass">
+        <div class="icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h4>Increase Customer Trust</h4>
+        <p>A premium online presence makes your business look established and credible.</p>
+      </div>
+      <div class="benefit-card glass">
+        <div class="icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4>Get More Bookings</h4>
+        <p>Built-in booking and contact features make it easy for customers to choose you.</p>
+      </div>
+      <div class="benefit-card glass">
+        <div class="icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h4>Look Premium Online</h4>
+        <p>Your website is your digital storefront. Make it match the quality of your service.</p>
+      </div>
+      <div class="benefit-card glass">
+        <div class="icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4>Fast Delivery</h4>
+        <p>From order to launch in 3–5 days. You won't wait months to see results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE DEMO -->
+<section class="demo-section" id="demo">
+  <div class="container">
+    <div class="section-label">Live Demo</div>
+    <h2 class="section-title">See What a Premium Business Website Looks Like</h2>
+    <p class="section-desc" style="margin-bottom:8px">This is a demo preview of the type of website your business can have — clean, fast, and built to convert.</p>
+    <div class="demo-showcase">
+      <div class="demo-mockup">
+        <div class="bar"><span></span><span></span><span></span></div>
+        <h3>THE ROYAL BARBER</h3>
+        <div class="tagline">Premium Grooming Studio</div>
+        <div class="row">
+          <div class="box gold"></div>
+          <div class="box cyan"></div>
+          <div class="box gold"></div>
+        </div>
+        <div class="row">
+          <div class="box tall"></div>
+          <div class="box tall"></div>
+        </div>
+        <div class="row">
+          <div class="box"></div>
+          <div class="box cyan"></div>
+          <div class="box"></div>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <div style="flex:1;height:32px;border-radius:60px;background:linear-gradient(135deg,var(--cyan),#0099FF)"></div>
+          <div style="flex:1;height:32px;border-radius:60px;border:1px solid rgba(255,255,255,0.1)"></div>
+        </div>
+      </div>
+      <div class="demo-features">
+        <div class="demo-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div><h4>Premium Design</h4><p>Luxury look that builds trust instantly</p></div>
+        </div>
+        <div class="demo-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+          <div><h4>Mobile Optimized</h4><p>Flawless on any device — phone, tablet, desktop</p></div>
+        </div>
+        <div class="demo-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div><h4>Built-in Booking</h4><p>Customers can book directly from your site</p></div>
+        </div>
+        <div class="demo-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <div><h4>Lightning Fast</h4><p>Optimized for speed — 98+ PageSpeed score</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Simple, Transparent Pricing</h2>
+    <p class="section-desc" style="margin-bottom:8px">No hidden fees. No over-complicated packages. Just results.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card glass">
+        <h3>Starter</h3>
+        <div class="price"><span class="curr">KD</span> 80</div>
+        <div class="price-label">One-time</div>
+        <p>Perfect for new businesses needing a strong first impression.</p>
+        <ul>
+          <li>Single-page website</li>
+          <li>Mobile responsive</li>
+          <li>Contact form</li>
+          <li>Google Maps integration</li>
+          <li>Delivery in 3 days</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center">Get Started</a>
+      </div>
+      <div class="pricing-card glass featured">
+        <div class="badge">Most Popular</div>
+        <h3>Growth</h3>
+        <div class="price"><span class="curr">KD</span> 150</div>
+        <div class="price-label">One-time</div>
+        <p>Multi-page premium site with booking capabilities.</p>
+        <ul>
+          <li>Multi-page website</li>
+          <li>Booking system</li>
+          <li>WhatsApp integration</li>
+          <li>Google Maps + reviews</li>
+          <li>Delivery in 4 days</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">Get Started</a>
+      </div>
+      <div class="pricing-card glass">
+        <h3>Premium MVP</h3>
+        <div class="price"><span class="curr">KD</span> 300<span style="font-size:1rem;color:var(--muted)">+</span></div>
+        <div class="price-label">Custom quote</div>
+        <p>Fully custom platform with automation and AI features.</p>
+        <ul>
+          <li>Custom web application</li>
+          <li>AI chatbot integration</li>
+          <li>Full business automation</li>
+          <li>Dashboard &amp; analytics</li>
+          <li>Custom timeline</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center">Contact Me</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<footer class="footer" id="contact">
+<section class="contact-section" id="contact">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h2>Let's Build Something Valuable</h2>
-        <p>Need a website, AI system, or MVP? Let's talk.</p>
-        <div class="footer-actions">
-          <a href="https://www.linkedin.com/in/karim-saleh-b078a0391/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
+    <div class="section-label">Let's Talk</div>
+    <h2 class="section-title">Ready to Grow Your Business Online?</h2>
+    <p class="section-desc" style="margin-bottom:8px">Tell me about your business and I'll build a website that works for you.</p>
+    <div class="contact-grid">
+      <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you! I will get back to you within 24 hours.')">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <select required>
+          <option value="">Business Type</option>
+          <option value="salon">Salon / Barber</option>
+          <option value="restaurant">Restaurant / Cafe</option>
+          <option value="clinic">Clinic / Healthcare</option>
+          <option value="gym">Gym / Fitness</option>
+          <option value="retail">Retail / Shop</option>
+          <option value="other">Other</option>
+        </select>
+        <textarea placeholder="Tell me about your project..." rows="4"></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <h3>Let's Build Something Great</h3>
+        <p>Every business deserves a website that reflects its quality. Fill out the form or reach out directly and I'll get back to you within 24 hours with a custom proposal.</p>
+        <div class="contact-social">
+          <a href="https://www.linkedin.com/in/karim-saleh-b078a0391/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
           </a>
-          <a href="https://www.instagram.com/mvp.architect/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            Instagram
+          <a href="https://www.instagram.com/mvp.architect/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
         </div>
       </div>
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/in/karim-saleh-b078a0391/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/mvp.architect/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-        </a>
-        <a href="https://github.com/kmkarimx" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 MVP ARCHITECT &mdash; All rights reserved.</span>
-      <span class="ar">&copy; ٢٠٢٦ إم في بي أركيتكت &mdash; جميع الحقوق محفوظة</span>
-    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    &copy; 2026 <strong>MVP ARCHITECT</strong> &mdash; Premium Websites for Local Businesses. All rights reserved.
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="scripts/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var fadeEls=document.querySelectorAll('.hero h1,.hero p,.hero-actions,.hero .section-label');
+  var tl=window.gsap?gsap.timeline({delay:0.15}):null;
+  if(tl){tl.fromTo(fadeEls,{opacity:0,y:16},{opacity:1,y:0,duration:0.5,stagger:0.1,ease:'power2.out'})}
+  else{fadeEls.forEach(function(e){e.style.opacity='1'})}
+});
+</script>
 </body>
 </html>
