@@ -7,7 +7,7 @@
 <meta name="description" content="Premium websites, booking systems, and MVPs built for local businesses in 3–5 days. No monthly fees — one-time build.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -21,6 +21,7 @@
   --muted:rgba(255,255,255,0.4);
   --radius:16px;
   --font:'Inter',system-ui,sans-serif;
+  --font-ar:'Cairo',system-ui,sans-serif;
 }
 html{scroll-behavior:smooth;font-size:16px;overflow-x:hidden}
 body{
@@ -30,6 +31,7 @@ body{
 }
 .container{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
 section{padding:80px 0;position:relative}
+.ar{font-family:var(--font-ar);direction:rtl;unicode-bidi:embed;display:block;color:var(--gold);font-size:clamp(0.75rem,1.5vw,0.95rem);font-weight:600;margin-top:4px;line-height:1.4}
 .glass{
   background:var(--card);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
   border:1px solid var(--border);border-radius:var(--radius);
@@ -191,8 +193,8 @@ section{padding:80px 0;position:relative}
   <div class="container">
     <div class="hero-content">
       <div class="section-label">MVP Architect — Fast MVP &amp; Business Website Builder</div>
-      <h1>Build a Premium Website That Gets You More Customers in 3–5 Days</h1>
-      <p>I design and build high-converting websites, booking systems, and business dashboards for local businesses — fast, modern, and ready to use.</p>
+      <h1>Build a Premium Website That Gets You More Customers in 3–5 Days <span class="ar">ابني موقع احترافي يساعدك تجيب عملاء أكثر في ٣–٥ أيام</span></h1>
+      <p>I design and build high-converting websites, booking systems, and business dashboards for local businesses — fast, modern, and ready to use. <span class="ar">أصمم وأبني مواقع احترافية، أنظمة حجز، ولوحات تحكم ذكية للأنشطة التجارية — بسرعة وجودة عالية</span></p>
       <ul class="value-points">
         <li>Landing Pages for Local Businesses</li>
         <li>Booking &amp; Appointment Systems</li>
@@ -220,28 +222,28 @@ section{padding:80px 0;position:relative}
 <section id="services">
   <div class="container">
     <div class="section-label">What I Build</div>
-    <h2 class="section-title">Websites That Work for Your Business</h2>
+    <h2 class="section-title">Websites That Work for Your Business <span class="ar">مواقع تعمل لصالح نشاطك التجاري</span></h2>
     <p class="section-desc" style="margin-bottom:36px">Every site is mobile-first, lightning-fast, and designed to turn visitors into paying customers.</p>
     <div class="services-grid">
       <div class="service-card glass">
         <div class="icon">
           <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
         </div>
-        <h3>Landing Pages</h3>
+        <h3>Landing Pages <span class="ar">صفحات هبوط</span></h3>
         <p>High-converting, premium designed pages that showcase your business at its best.</p>
       </div>
       <div class="service-card glass">
         <div class="icon">
           <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M6 6h4v4H6zM14 6h4v4h-4zM6 14h4v4H6zM14 14h4v4h-4z"/></svg>
         </div>
-        <h3>Booking Systems</h3>
+        <h3>Booking Systems <span class="ar">أنظمة حجز مواعيد</span></h3>
         <p>Let customers book appointments directly from your site — automatically and 24/7.</p>
       </div>
       <div class="service-card glass">
         <div class="icon">
           <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M6 6h4v4H6zM14 6h4v4h-4zM6 14h4v4H6zM14 14h4v4h-4z"/></svg>
         </div>
-        <h3>Business Automation</h3>
+        <h3>Business Automation <span class="ar">أتمتة الأعمال</span></h3>
         <p>Automate booking confirmations, reminders, and follow-ups to save time and increase revenue.</p>
       </div>
     </div>
@@ -343,11 +345,11 @@ section{padding:80px 0;position:relative}
 <section id="pricing">
   <div class="container">
     <div class="section-label">Pricing</div>
-    <h2 class="section-title">Simple, Transparent Pricing</h2>
+    <h2 class="section-title">Simple, Transparent Pricing <span class="ar">أسعار واضحة ومباشرة</span></h2>
     <p class="section-desc" style="margin-bottom:8px">No hidden fees. No over-complicated packages. Just results.</p>
     <div class="pricing-grid">
       <div class="pricing-card glass">
-        <h3>Starter</h3>
+        <h3>Starter <span class="ar">ابتدائي</span></h3>
         <div class="price"><span class="curr">KD</span> 80</div>
         <div class="price-label">One-time</div>
         <p>Perfect for new businesses needing a strong first impression.</p>
@@ -362,7 +364,7 @@ section{padding:80px 0;position:relative}
       </div>
       <div class="pricing-card glass featured">
         <div class="badge">Most Popular</div>
-        <h3>Growth</h3>
+        <h3>Growth <span class="ar">نمو</span></h3>
         <div class="price"><span class="curr">KD</span> 150</div>
         <div class="price-label">One-time</div>
         <p>Multi-page premium site with booking capabilities.</p>
@@ -376,7 +378,7 @@ section{padding:80px 0;position:relative}
         <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center">Get Started</a>
       </div>
       <div class="pricing-card glass">
-        <h3>Premium MVP</h3>
+        <h3>Premium MVP <span class="ar">نموذج أولي متكامل</span></h3>
         <div class="price"><span class="curr">KD</span> 300<span style="font-size:1rem;color:var(--muted)">+</span></div>
         <div class="price-label">Custom quote</div>
         <p>Fully custom platform with automation and AI features.</p>
@@ -397,7 +399,7 @@ section{padding:80px 0;position:relative}
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="section-label">Let's Talk</div>
-    <h2 class="section-title">Ready to Grow Your Business Online?</h2>
+    <h2 class="section-title">Ready to Grow Your Business Online? <span class="ar">مستعد لتطوير أعمالك عبر الإنترنت؟</span></h2>
     <p class="section-desc" style="margin-bottom:8px">Tell me about your business and I'll build a website that works for you.</p>
     <div class="contact-grid">
       <form class="contact-form" onsubmit="event.preventDefault();alert('Thank you! I will get back to you within 24 hours.')">
