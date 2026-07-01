@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "id": "double-x",
+      "tag": "\u2726 Landing Page",
+      "title": "Double X Men's Salon",
+      "visualSvg": "<svg width=\"130\" height=\"130\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#D4AF37\" stroke-width=\"0.8\" stroke-linecap=\"round\"><rect x=\"2\" y=\"3\" width=\"20\" height=\"14\" rx=\"2\"/><path d=\"M8 21h8M12 17v4\" stroke=\"#00F2FE\"/><circle cx=\"12\" cy=\"10\" r=\"2\" stroke=\"#D4AF37\"/><path d=\"M16 10h2M6 10h2\" stroke=\"#00F2FE\" stroke-width=\"0.6\"/><path d=\"M12 6V4M12 16v2\" stroke=\"#D4AF37\" stroke-width=\"0.6\"/></svg>",
+      "caseStudies": [
+        { "type": "problem", "label": "Problem", "text": "Weak digital presence \u2014 no premium website to attract clients." },
+        { "type": "solution", "label": "Solution", "text": "Premium bilingual booking website with WhatsApp & Google Maps sync." },
+        { "type": "outcome", "label": "Outcome", "text": "Stronger online trust and easier client conversion." }
+      ],
+      "links": [
+        { "type": "live", "url": "https://double-x-mens-salon.vercel.app/", "text": "Live Demo", "icon": "external" }
+      ]
+    },
+    {
+      "id": "drive-thru",
+      "tag": "\u2726 Retail MVP",
+      "title": "Drive-Thru & Shop Management MVP",
+      "visualSvg": "<svg width=\"130\" height=\"130\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#00F2FE\" stroke-width=\"0.8\" stroke-linecap=\"round\"><rect x=\"2\" y=\"2\" width=\"20\" height=\"20\" rx=\"3\"/><path d=\"M6 6h4v4H6zM14 6h4v4h-4zM6 14h4v4H6zM14 14h4v4h-4z\" stroke=\"#D4AF37\" stroke-width=\"0.6\"/><path d=\"M3 10h18M3 18h18\" stroke=\"currentColor\" stroke-width=\"0.4\"/></svg>",
+      "caseStudies": [
+        { "type": "problem", "label": "Problem", "text": "Slow manual operations hurting efficiency and customer satisfaction." },
+        { "type": "solution", "label": "Solution", "text": "Integrated management dashboard with inventory tracking and analytics." },
+        { "type": "outcome", "label": "Outcome", "text": "Improved workflow efficiency and reduced operational errors." }
+      ],
+      "links": [
+        { "type": "coming-soon", "text": "Coming Soon", "icon": "clock" }
+      ]
+    }
+  ]
+}
